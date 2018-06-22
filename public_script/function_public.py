@@ -63,8 +63,8 @@ def set_date(config_fdir,config_data,value_data,config_file="/Config/conf_data.i
 
 
 
-if __name__ == '__main__':
-    # print(sys.version_info.major)
-    import pprint
-    print(get_data("kafka","topics"))
-    set_date("kafka","rtloest","192.00169")
+# if __name__ == '__main__':
+#     # print(sys.version_info.major)
+#     import pprint
+#     print(get_data("kafka","topics"))
+#     set_date("kafka","rtloest","192.00169")
