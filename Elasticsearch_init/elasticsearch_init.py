@@ -10,21 +10,6 @@ from elasticsearch import Elasticsearch
 import logging as log
 log.basicConfig(level=log.DEBUG)
 
-# es = Elasticsearch([{"host": "172.16.82.142", "port": 9200}])
-# es = Elasticsearch(["172.16.82.142:9200"])
-# index = "dripsms2018"
-# query = {
-#   "query": {
-#      "match": {
-#        "_type": "smsRecord100IME"
-#     }
-#   }
-# }
-# resp = es.search(index=index,body=query)
-# resp_doc = resp["hits"]["hits"]
-# total = resp['hits']['total']
-# print (total)
-# print (resp_doc[0]['_source'])
 from Plug_in_unit.public_script.function_public import *
 import json
 import sys
@@ -64,18 +49,3 @@ if __name__ == '__main__':
     resp1 = json.dumps(resp_doc,ensure_ascii=False)
     print resp1
     print type(resp1)
-    # resp2 = json.dumps(resp_doc,ensure_ascii=False).decode('utf-8').encode('gb2312')
-    # print resp2
-    # print type(resp2)
-    # print repr(resp_doc)
-    # print type(resp_doc)
-    # query2 = {"query": {"match": {"_type": "smsRecord100IME"}}}
-    # query = get_data("ES", "query")
-    # print query, type(query)
-    # print query2, type(query2)
-    # query3 = json.loads(query)
-    # print query3, type(query3)
-    # query4 = json.dumps(query,encoding="utf-8",ensure_ascii=False)
-    # print query4,type(query4)
-    # query5 = json.loads(query4)
-    # print query5,type(query5)
