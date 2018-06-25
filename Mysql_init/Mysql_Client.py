@@ -6,35 +6,28 @@
 # @File    : Mysql_Client.py
 # @Software: PyCharm
 import pymysql
-import sys
 from Plug_in_unit.public_script.function_public import *
-# hostip= get_data("mysql","hostip")
-# port = get_data("mysql","port")
-# username = get_data("mysql","username")
-# pwd = get_data("mysql","pwd")
-# database = get_data("mysql","database")
-#
-# db = pymysql.connect(host= hostip,port=int(port),user=username,password=pwd,database=database )
-# cursor = db.cursor()
-# cursor.execute("select * FROM AdaptMode")
-# # data = cursor.fetchone()
-# data = cursor.fetchall()
-# print(data)
-# db.close()
-
+import sys
+import logging as log
+log.basicConfig(level=log.DEBUG)
 class MySQL():
+    '''
+    #函数作用：mysql 连接初始化并返回结果
+    #参数说明：hostip:       mysql 链接地址
+    #         port:         mysql 链接端口
+    #         username:     mysql 登录用户名
+    #         pwd:          mysql 登录密码
+    #         database:     mysql链接数据库
+    #兼容 Python2 和 python3
+    #
+    '''
     #初始化数据
-    hostip= get_data("mysql","hostip")
-    port = get_data("mysql","port")
-    username = get_data("mysql","username")
-    pwd = get_data("mysql","pwd")
-    database = get_data("mysql","database")
+    hostip= get_data("mysql", "hostip")
+    port = get_data("mysql", "port")
+    username = get_data("mysql", "username")
+    pwd = get_data("mysql", "pwd")
+    database = get_data("mysql", "database")
     def Mysql_operate(self,operation):
-        '''
-        :param operation: connect mysql and operate it
-        :return:
-        兼容 Python2 and python3
-        '''
         if sys.version_info.major == 2:
             #python2 connect mysql
             try:
