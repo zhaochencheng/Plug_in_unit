@@ -7,37 +7,13 @@
 # @Software: PyCharm
 import pymongo
 from pymongo import MongoClient
-import pprint
-import datetime
-
-# client = MongoClient()
-# client = MongoClient("192.168.45.104", port=27017)
-# #获取数据库
-# db = client['DripAudit']
-# #获取集合collection(表)
-# collection = db['test']
-# print collection.find_one({"Appid":"100IME"})
-# pprint.pprint(collection.find_one({"Appid":"100IME"}))
-# post = {"author":"mike","text":"我的第一盘","tags":["mongodb","python"],"date":datetime.datetime.utcnow()}
-# collection.insert(post)
-# print collection.insert_one(post).inserted_id
-#插入数据用 insert_one or insert_many ;insert 不建议使用
-# post_id = collection.insert_one(post).inserted_id
-
-# print collection.find_one({"author":"mike"})
-# print collection.count()
-# print collection.name
-#查询find or find_one
-# pprint.pprint(collection.find_one({"_id":post_id}))
-# for post in collection.find({"author":"mike"}):
-#     pprint.pprint(post)
-#     print '\n'
-# all = collection.find({})
-# print all
-import json
 from Plug_in_unit.public_script.function_public import *
 
 class Mongo():
+<<<<<<< HEAD
+=======
+    #初始化化数据
+>>>>>>> add ES
     host = get_data("mongo","mongohost")
     port = int(get_data("mongo","port"))
     database = get_data("mongo","database")
