@@ -10,10 +10,7 @@ from pymongo import MongoClient
 from Plug_in_unit.public_script.function_public import *
 
 class Mongo():
-<<<<<<< HEAD
-=======
-    #初始化化数据
->>>>>>> add ES
+     #初始化化数据
     host = get_data("mongo","mongohost")
     port = int(get_data("mongo","port"))
     database = get_data("mongo","database")
