@@ -22,25 +22,26 @@ class demo(unittest.TestCase):
         pass
 
     def test_01(self):
-        SmsRecord = get_data("mongo_integration","collection1")
+        # SmsRecord = get_data("mongo_integration","collection1")
         SmsStatisticsForAppOfDay = get_data("mongo_integration","collection2")
-        SmsStatisticsForAppOfMonth = get_data("mongo_integration","collection3")
-        SmsStatisticsForChannelOfDay = get_data("mongo_integration","collection4")
-        SmsStatisticsForChannelOfMonth = get_data("mongo_integration","collection5")
-        SmsStatisticsForTidOfDay = get_data("mongo_integration","collection6")
-        SmsStatisticsForTidOfMonth = get_data("mongo_integration","collection7")
-        AppofDay_count_old = self.mongo_collection_count(SmsStatisticsForAppOfDay)
+        # SmsStatisticsForAppOfMonth = get_data("mongo_integration","collection3")
+        # SmsStatisticsForChannelOfDay = get_data("mongo_integration","collection4")
+        # SmsStatisticsForChannelOfMonth = get_data("mongo_integration","collection5")
+        # SmsStatisticsForTidOfDay = get_data("mongo_integration","collection6")
+        # SmsStatisticsForTidOfMonth = get_data("mongo_integration","collection7")
+        condition = {"Appid":"OD0QS8Z6","StatisticsTime":"2018-06-27"}
+        AppofDay_count_old = self.mongo_collection_count(SmsStatisticsForAppOfDay, condition)
         print "APP每日发送总量",AppofDay_count_old
-        AppofMonth_count_old = self.mongo_collection_count(SmsStatisticsForAppOfMonth)
-        print "APP每月发送总量",AppofMonth_count_old
-        ChannelOfDay_count_old = self.mongo_collection_count(SmsStatisticsForChannelOfDay)
-        print "通道每日发送总量",ChannelOfDay_count_old
-        ChannelOfMonth_count_old = self.mongo_collection_count(SmsStatisticsForChannelOfMonth)
-        print "通道每月发送总量",ChannelOfMonth_count_old
-        TidOfDay_count_old = self.mongo_collection_count(SmsStatisticsForTidOfDay)
-        print "短信模板每日发送总量",TidOfDay_count_old
-        TidOfMonth_count_old = self.mongo_collection_count(SmsStatisticsForTidOfMonth)
-        print "短信模板每月发送总量",TidOfMonth_count_old
+        # AppofMonth_count_old = self.mongo_collection_count(SmsStatisticsForAppOfMonth)
+        # print "APP每月发送总量",AppofMonth_count_old
+        # ChannelOfDay_count_old = self.mongo_collection_count(SmsStatisticsForChannelOfDay)
+        # print "通道每日发送总量",ChannelOfDay_count_old
+        # ChannelOfMonth_count_old = self.mongo_collection_count(SmsStatisticsForChannelOfMonth)
+        # print "通道每月发送总量",ChannelOfMonth_count_old
+        # TidOfDay_count_old = self.mongo_collection_count(SmsStatisticsForTidOfDay)
+        # print "短信模板每日发送总量",TidOfDay_count_old
+        # TidOfMonth_count_old = self.mongo_collection_count(SmsStatisticsForTidOfMonth)
+        # print "短信模板每月发送总量",TidOfMonth_count_old
 
         # #
         # code_num = int(time.time())  #构建一个验证码；按时间构建保证唯一性 并和目前使用验证码不冲突
@@ -91,11 +92,11 @@ class demo(unittest.TestCase):
         print "Appid：",Appid
         print "模板ID：",Tid
         print "短信通道：",Channel
-    def mongo_collection_count(self,collection):
+    def mongo_collection_count(self,collection,condition):
         host = get_data("mongo_integration","mongohost")
         port = int(get_data("mongo_integration","port"))
         database = get_data("mongo_integration","database")
-        data = Mongo().connect_mongo(host=host,port=port,database=database,collection=collection).count()
+        data = Mongo().connect_mongo(host=host,port=port,database=database,collection=collection).find_one(condition)
         return data
 
 

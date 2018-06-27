@@ -50,6 +50,7 @@ if __name__ == '__main__':
     port = int(get_data("mongo_integration","port"))
     database = get_data("mongo_integration","database")
     collection = get_data("mongo_integration","collection1")
+    SmsStatisticsForAppOfDay = get_data("mongo_integration","collection2")
     # data = get_data("mongo","data")
     # data = '{"author":"mike","text":"123","tags":["mongodb","python"],"date":123}'
     # print(data, type(data))
@@ -58,7 +59,9 @@ if __name__ == '__main__':
 
     # mongo = Mongo()
     # data = Mongo().connect_mongo(host,port=port,database=database,collection=collection).find_one({"Content" : "【科大讯飞】1530087810"})
-    data = Mongo().connect_mongo(host,port=port,database=database,collection=collection).count()
-    Mongo().connect_mongo(host,port=port,database=database,collection=collection)
+    # data = Mongo().connect_mongo(host,port=port,database=database,collection=collection).count()
+    # Mongo().connect_mongo(host,port=port,database=database,collection=collection)
+    condition = {"Appid":"OD0QS8Z6","StatisticsTime":"2018-06-28"}
+    AppofDay_count_old = Mongo().connect_mongo(host,port=port,database=database,collection=SmsStatisticsForAppOfDay).find_one(condition)
 
-    print data
+    print AppofDay_count_old
