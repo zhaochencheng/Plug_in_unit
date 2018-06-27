@@ -14,9 +14,9 @@ log.basicConfig(level=log.DEBUG)
 class Kafka_Producer():
 
     #初始化数据
-    hostname= get_data("kafka2","hostname")
-    topic = get_data("kafka2","topics")
-    msg = get_data("kafka2","producer_msg")
+    hostname= get_data("kafka1","hostname")
+    topic = get_data("kafka1","topics")
+    msg = get_data("kafka1","producer_msg")
 
     def producer_init(self):
         '''

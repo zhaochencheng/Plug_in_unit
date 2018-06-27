@@ -23,39 +23,42 @@ class Mongo():
     #兼容 Python2 和 python3
     #
     '''
-    #初始化化数据
-    host = get_data("mongo","mongohost")
-    port = int(get_data("mongo","port"))
-    database = get_data("mongo","database")
-    collection = get_data("mongo","collection")
     def __init__(self):
         pass
-    def connect_mongo(self):
+    def connect_mongo(self,host,port,database,collection):
         if sys.version_info.major == 2:
-            client = MongoClient(self.host,port=self.port)
+            client = MongoClient(host,port=port)
             #获取数据库
-            db = client[self.database]
+            db = client[database]
             # print("当前连接数据库为：", db)
             #获取集合
-            collections = db[self.collection]
+            collections = db[collection]
             # print("当前获取集合（表）:", collections)
             return collections
         elif sys.version_info.major == 3:
-            client = MongoClient(self.host,port=self.port)
+            client = MongoClient(host,port=port)
             #获取数据库
-            db = client[self.database]
+            db = client[database]
             # print("当前连接数据库为：", db)
             #获取集合
-            collections = db[self.collection]
+            collections = db[collection]
             # print("当前获取集合（表）:", collections)
             return collections
 
 if __name__ == '__main__':
-    data = get_data("mongo","data")
+    host = get_data("mongo_integration","mongohost")
+    port = int(get_data("mongo_integration","port"))
+    database = get_data("mongo_integration","database")
+    collection = get_data("mongo_integration","collection1")
+    # data = get_data("mongo","data")
     # data = '{"author":"mike","text":"123","tags":["mongodb","python"],"date":123}'
-    print(data, type(data))
-    data2 = json.loads(data)
-    print(data2, type(data2))
+    # print(data, type(data))
+    # data2 = json.loads(data)
+    # print(data2, type(data2))
 
-    mongo = Mongo()
-    mongo.connect_mongo().insert_one(json.loads(data))
+    # mongo = Mongo()
+    # data = Mongo().connect_mongo(host,port=port,database=database,collection=collection).find_one({"Content" : "【科大讯飞】1530087810"})
+    data = Mongo().connect_mongo(host,port=port,database=database,collection=collection).count()
+    Mongo().connect_mongo(host,port=port,database=database,collection=collection)
+
+    print data

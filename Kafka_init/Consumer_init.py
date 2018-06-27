@@ -13,10 +13,10 @@ log.basicConfig(level=log.DEBUG)
 
 class Kafka_consumer():
     #初始化数据
-    hostname= get_data("kafka2","hostname")
-    topic = get_data("kafka2","topics")
-    groupID = get_data("kafka2","groupid")
-    zookeeper_hostname = get_data("kafka2","zookeeper_ip")
+    hostname= get_data("kafka1","hostname")
+    topic = get_data("kafka1","topics")
+    groupID = get_data("kafka1","groupid")
+    zookeeper_hostname = get_data("kafka1","zookeeper_ip")
 
     def Consumer_Init(self):
         '''
