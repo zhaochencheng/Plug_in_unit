@@ -61,7 +61,12 @@ if __name__ == '__main__':
     # data = Mongo().connect_mongo(host,port=port,database=database,collection=collection).find_one({"Content" : "【科大讯飞】1530087810"})
     # data = Mongo().connect_mongo(host,port=port,database=database,collection=collection).count()
     # Mongo().connect_mongo(host,port=port,database=database,collection=collection)
-    condition = {"Appid":"OD0QS8Z6","StatisticsTime":"2018-06-28"}
-    AppofDay_count_old = Mongo().connect_mongo(host,port=port,database=database,collection=SmsStatisticsForAppOfDay).find_one(condition)
-
-    print AppofDay_count_old
+    # condition = {"Appid":"OD0QS8Z6","StatisticsTime":"2018-06-28"}
+    # AppofDay_count_old = Mongo().connect_mongo(host,port=port,database=database,collection=SmsStatisticsForAppOfDay).find(condition)
+    # AppofDay_count_old = [i for i in AppofDay_count_old]
+    # if len(AppofDay_count_old) == 0:
+    #     print AppofDay_count_old
+    # else:
+    #     print AppofDay_count_old[0]
+    #     print type(AppofDay_count_old[0])
+    # print AppofDay_count_old[0]['TotalCount']+1

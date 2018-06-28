@@ -57,7 +57,7 @@ def set_date(config_fdir,config_data,value_data,config_file="/Config/conf_data.i
         config = configparser.ConfigParser()
         file_path = os.path.abspath(os.path.join(os.path.realpath(__file__), "../..")) + config_file
         config.read(file_path,encoding='utf-8')
-        config.set(config_fdir,config_data,value_data)
+        config.set(config_fdir,config_data,str(value_data))
         with open(file_path, 'w+',encoding='utf-8') as f:
             config.write(f)
 

@@ -25,31 +25,31 @@ class Elasticsearch_Init():
         2. eval() 在string内容比较可控/安全的前提下，eval是不错的方法。
         3. json.loads() 用json提供的loads方法是不错的，不过key/value中的string被转化为了unicode;
     '''
-    #初始化数据
-    host = get_data("ES", "servers")
-    index = get_data("ES", "index")
-    query = get_data("ES", "query")
 
-    def operation_ES(self):
+    def operation_ES(self,host,index,query):
         if sys.version_info.major == 2:
-            es = Elasticsearch([self.host])
-            index = self.index
-            query = self.query
+            es = Elasticsearch([host])
             #json.loads   str 转化为 dict
             resp = es.search(index=index, body=json.loads(query))
             return resp
         elif sys.version_info.major == 3:
-            es = Elasticsearch([self.host])
-            index = self.index
-            query = self.query
+            es = Elasticsearch([host])
             resp = es.search(index=index, body=json.loads(query))
             return resp
-
+#
 if __name__ == '__main__':
-    Es = Elasticsearch_Init()
+    #初始化数据
+    host = get_data("ES", "servers")
+    index = get_data("ES", "index")
+#     # query = get_data("ES", "query_content")
+#     # set_date("ES","query_content",'{"query": {"match": {"_id": "2cb6d8b349c44aabab53b0facef0ca49:7081684480555158"}}}')
+#     # query = get_data("ES", "query_content").replace('\'','"')
+#     # myStr = myStr.replace('"','\'')
+    resp_doc= Elasticsearch_Init().operation_ES(host,index,)
     # resp_doc = Es.operation_ES()
-    # print resp_doc['hits']['hits'][0]["_source"]["extra"]
-    # print type(resp_doc)
-    # resp1 = json.dumps(resp_doc,ensure_ascii=False)
-    # print resp1
-    # print type(resp1)
+#     print resp_doc["hits"]["hits"][0]["_source"]["phone"]
+#     # # print resp_doc['hits']["total"]
+#     # print type(resp_doc)
+#     # resp1 = json.dumps(resp_doc,ensure_ascii=False)
+#     # print resp1
+#     # print type(resp1)
