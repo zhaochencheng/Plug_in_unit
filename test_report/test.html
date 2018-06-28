@@ -193,9 +193,9 @@ function showOutput(id, name) {
 
 <div class='page-header'>
 <h1>自动化测试报告,测试结果如下：</h1>
-<p class='attribute'><strong>开始时间:</strong> 2018-06-28 14:26:10</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:06.620379</p>
-<p class='attribute'><strong>状态:</strong> 通过 1</p>
+<p class='attribute'><strong>开始时间:</strong> 2018-06-28 16:22:51</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:33.079892</p>
+<p class='attribute'><strong>状态:</strong> 通过 2</p>
 
 </div>
 <p class='description'>用例执行情况：</p>
@@ -227,16 +227,16 @@ function showOutput(id, name) {
 </tr>
 
 <tr class='passClass'>
-    <td>test_demo.demo</td>
-    <td>1</td>
-    <td>1</td>
+    <td>test_demo.Sms_consumer: 短信消息插件功能验证</td>
+    <td>2</td>
+    <td>2</td>
     <td>0</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c1',1)">详情</a></td>
+    <td><a href="javascript:showClassDetail('c1',2)">详情</a></td>
 </tr>
 
 <tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_01</div></td>
+    <td class='none'><div class='testcase'>test_01: 验证consumer在mongo和ES数据存储一致</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -250,28 +250,71 @@ function showOutput(id, name) {
         </div>
         <pre>
         
-pt1.1: 该appid短信发送总条数： 2978
-APP每日短信量 {'TotalCount': 25, 'ChargedCount': 0, 'SuccessCount': 0}
-通道每日短信量 {'TotalCount': 25, 'ChargedCount': 0, 'SuccessCount': 0}
-短信模板每日短信量 {'TotalCount': 25, 'ChargedCount': 0, 'SuccessCount': 0}
-APP每月短信量 {'TotalCount': 1577, 'ChargedCount': 4, 'SuccessCount': 4}
-通道每月短信量 {'TotalCount': 1577, 'ChargedCount': 4, 'SuccessCount': 4}
-短信模板每月短信量 {'TotalCount': 1577, 'ChargedCount': 4, 'SuccessCount': 4}
-ES 该APP下日志记录总数为： 1570
-code_num： 1530167171
+pt1.1: 该appid短信发送总条数： 14085
+APP每日短信量 {'TotalCount': 8, 'ChargedCount': 4, 'SuccessCount': 4}
+APP每月短信量 {'TotalCount': 8322, 'ChargedCount': 83, 'SuccessCount': 51}
+通道每日短信量 {'TotalCount': 8, 'ChargedCount': 4, 'SuccessCount': 4}
+通道每月短信量 {'TotalCount': 3776, 'ChargedCount': 23, 'SuccessCount': 21}
+短信模板每日短信量 {'TotalCount': 8, 'ChargedCount': 4, 'SuccessCount': 4}
+短信模板每月短信量 {'TotalCount': 3340, 'ChargedCount': 18, 'SuccessCount': 16}
+ES 该APP下日志记录总数为： 8282
+code_num： 1530174172
 接口返回信息： {"code":"000000","desc":"成功"}
-mongo历史记录表查询数据： {'_id': ObjectId('5b347f7fe4b0a3bc25e64603'), 'Sid': '56067c62108b4749aadef9d941552691:7217189169788957', 'Phone': '18856361920', 'Appid': 'OD0QS8Z6', 'Tid': '10202', 'Channel': 'xwsms', 'Content': '【科大讯飞】1530167171', 'Stm': '2018-06-28 14:26:07', 'Ltm': '2018-06-28 14:26:07', 'Status': '--', 'Extra': '--'}
-该APP短信发送总条数： 2979
-APP每日短信量 {'TotalCount': 26, 'ChargedCount': 0, 'SuccessCount': 0}
-通道每日短信量 {'TotalCount': 26, 'ChargedCount': 0, 'SuccessCount': 0}
-短信模板每日短信量 {'TotalCount': 26, 'ChargedCount': 0, 'SuccessCount': 0}
-APP每月短信量 {'TotalCount': 1578, 'ChargedCount': 4, 'SuccessCount': 4}
-通道每月短信量 {'TotalCount': 1578, 'ChargedCount': 4, 'SuccessCount': 4}
-短信模板每月短信量 {'TotalCount': 1578, 'ChargedCount': 4, 'SuccessCount': 4}
-ES 该APP下日志记录总数为： 1571
-{"query": {"match": {"_id": "56067c62108b4749aadef9d941552691:7217189169788957"}}}
-{'took': 5, 'timed_out': False, '_shards': {'total': 5, 'successful': 5, 'failed': 0}, 'hits': {'total': 1, 'max_score': 1.0, 'hits': [{'_index': 'dripsms2018', '_type': 'smsRecordOD0QS8Z6', '_id': '56067c62108b4749aadef9d941552691:7217189169788957', '_score': 1.0, '_source': {'ltm': '2018-06-28 14:26:07', 'phone': '18856361920', 'appid': 'OD0QS8Z6', 'extra': '--', 'channel': 'xwsms', 'stm': '2018-06-28 14:26:07', 'tid': '10202', 'content': '【科大讯飞】1530167171', 'sid': '56067c62108b4749aadef9d941552691:7217189169788957', 'status': '--'}}]}}
-ES_appid: OD0QS8Z6 ES_phone: 18856361920 ES_channel: xwsms ES_tid: 10202 ES_status: --
+mongo历史记录表查询数据： {'_id': ObjectId('5b349ad7e4b0a3bc25e6460a'), 'Sid': '1:15301741675912000056361920999', 'Phone': '18856361920', 'Appid': '100IME', 'Tid': '10205', 'Channel': 'tencent', 'Content': '【科大讯飞】您好，您本次操作的验证码为1530174172，序号为999。请在50分钟内使用，过期无效。', 'Stm': '2018-06-28 16:22:47', 'Ltm': '--', 'Status': '--', 'Extra': '--'}
+短信发送后,该appid短信发送总条数： 14086
+短信发送后,APP每日短信量 {'TotalCount': 9, 'ChargedCount': 4, 'SuccessCount': 4}
+短信发送后,APP每月短信量 {'TotalCount': 8323, 'ChargedCount': 83, 'SuccessCount': 51}
+短信发送后,通道每日短信量 {'TotalCount': 9, 'ChargedCount': 4, 'SuccessCount': 4}
+短信发送后,通道每月短信量 {'TotalCount': 3777, 'ChargedCount': 23, 'SuccessCount': 21}
+短信发送后,短信模板每日短信量 {'TotalCount': 9, 'ChargedCount': 4, 'SuccessCount': 4}
+短信发送后,短信模板每月短信量 {'TotalCount': 3341, 'ChargedCount': 18, 'SuccessCount': 16}
+ES 该APP下日志记录总数为： 8283
+{"query": {"match": {"_id": "1:15301741675912000056361920999"}}}
+{'took': 3, 'timed_out': False, '_shards': {'total': 5, 'successful': 5, 'failed': 0}, 'hits': {'total': 1, 'max_score': 1.0, 'hits': [{'_index': 'dripsms2018', '_type': 'smsRecord100IME', '_id': '1:15301741675912000056361920999', '_score': 1.0, '_source': {'ltm': None, 'phone': '18856361920', 'appid': '100IME', 'extra': '--', 'channel': 'tencent', 'stm': '2018-06-28 16:22:47', 'tid': '10205', 'content': '【科大讯飞】您好，您本次操作的验证码为1530174172，序号为999。请在50分钟内使用，过期无效。', 'sid': '1:15301741675912000056361920999', 'status': '--'}}]}}
+ES_appid: 100IME ES_phone: 18856361920 ES_channel: tencent ES_tid: 10205 ES_status: --
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_02: 验证consumer 计费 和 统计</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        通过</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: APP每日短信量 {'TotalCount': 9, 'ChargedCount': 4, 'SuccessCount': 4}
+APP每月短信量 {'TotalCount': 8323, 'ChargedCount': 83, 'SuccessCount': 51}
+通道每日短信量 {'TotalCount': 9, 'ChargedCount': 4, 'SuccessCount': 4}
+通道每月短信量 {'TotalCount': 3777, 'ChargedCount': 23, 'SuccessCount': 21}
+短信模板每日短信量 {'TotalCount': 9, 'ChargedCount': 4, 'SuccessCount': 4}
+短信模板每月短信量 {'TotalCount': 3341, 'ChargedCount': 18, 'SuccessCount': 16}
+ES 该APP下日志记录总数为： 8283
+接口返回信息： {"errmsg":"OK","result":0}
+mongo历史记录表查询数据： {'_id': ObjectId('5b349ad7e4b0a3bc25e6460a'), 'Sid': '1:15301741675912000056361920999', 'Phone': '18856361920', 'Appid': '100IME', 'Tid': '10205', 'Channel': 'tencent', 'Content': '【科大讯飞】您好，您本次操作的验证码为1530174172，序号为999。请在50分钟内使用，过期无效。', 'Stm': '2018-06-28 16:22:47', 'Ltm': '2018-06-28 16:23:08', 'Status': 'SUCCESS', 'Extra': '用户短信送达成功'}
+短信发送后,APP每日短信量 {'TotalCount': 9, 'ChargedCount': 5, 'SuccessCount': 5}
+短信发送后,APP每月短信量 {'TotalCount': 8323, 'ChargedCount': 84, 'SuccessCount': 52}
+短信发送后,通道每日短信量 {'TotalCount': 9, 'ChargedCount': 5, 'SuccessCount': 5}
+短信发送后,通道每月短信量 {'TotalCount': 3777, 'ChargedCount': 24, 'SuccessCount': 22}
+短信发送后,短信模板每日短信量 {'TotalCount': 9, 'ChargedCount': 5, 'SuccessCount': 5}
+短信发送后,短信模板每月短信量 {'TotalCount': 3341, 'ChargedCount': 19, 'SuccessCount': 17}
+ES 该APP下日志记录总数为： 8283
+{"query": {"match": {"_id": "1:15301741675912000056361920999"}}}
+{'took': 5, 'timed_out': False, '_shards': {'total': 5, 'successful': 5, 'failed': 0}, 'hits': {'total': 1, 'max_score': 1.0, 'hits': [{'_index': 'dripsms2018', '_type': 'smsRecord100IME', '_id': '1:15301741675912000056361920999', '_score': 1.0, '_source': {'ltm': '2018-06-28 16:23:08', 'phone': '18856361920', 'appid': '100IME', 'extra': '用户短信送达成功', 'channel': 'tencent', 'stm': '2018-06-28 16:22:47', 'tid': '10205', 'content': '【科大讯飞】您好，您本次操作的验证码为1530174172，序号为999。请在50分钟内使用，过期无效。', 'sid': '1:15301741675912000056361920999', 'status': 'SUCCESS'}}]}}
+ES_status: SUCCESS
 
 
         </pre>
@@ -283,8 +326,8 @@ ES_appid: OD0QS8Z6 ES_phone: 18856361920 ES_channel: xwsms ES_tid: 10202 ES_stat
 
 <tr id='total_row'>
     <td>总计</td>
-    <td>1</td>
-    <td>1</td>
+    <td>2</td>
+    <td>2</td>
     <td>0</td>
     <td>0</td>
     <td>&nbsp;</td>
