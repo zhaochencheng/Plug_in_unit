@@ -82,7 +82,12 @@ body_content = [{"user_receive_time": "","nationcode": "86","mobile": "188563619
 # body_content[0]["user_receive_time"] = str(yes_time)
 # body_content[0]["sid"] = str(Sid)
 # 向接口发送请求
-r = requests.post(url='http://172.16.82.142:8081/sms/tencent/record', json=body_content)
-print("接口返回信息：",r.text)
+# r = requests.post(url='http://172.16.82.142:8081/sms/tencent/record', json=body_content)
+# print("接口返回信息：",r.text)
 # 校验接口返回信息
 # self.assertEqual(r.text,'{"errmsg":"OK","result":0}')
+code = "1455"+'1'*34
+body_content = {"appid": "100IME","phone": ["18856361920"],"tid": "10205","tp": "{'Code':'', 'Seq':'999', 'Minute':'50'}"}
+code_content= {'Code':'', 'Seq':'999', 'Minute':'50'}
+code_content['Code'] = "1455"+'1'*34
+print(code_content)
